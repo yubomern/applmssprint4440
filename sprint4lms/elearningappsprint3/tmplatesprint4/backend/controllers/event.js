@@ -1,10 +1,10 @@
 const express = require("express");
 const Event = require("../models/event");
-const catchAsyncErrors = require("../middlewares/catchAsyncErrors");
+const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const { upload } = require("../multer");
 const course = require("../models/course");
 const ErrorHandler = require("../utils/ErrorHandler");
-const { isStudent, isAdmin, isAuthenticated } = require("../middlewares/auth");
+const { isStudentEvent, isAdminEvent, isAuthenticated } = require("../middleware/auth");
 const fs = require(`fs`);
 const uuid = require("uuid");
 
@@ -86,7 +86,7 @@ router.get(
 // Delete event of a shop
 router.delete(
   `/delete-shop-event/:id`,
-  isStudent,
+  isStudentEvent,
   catchAsyncErrors(async (req, res, next) => {
     try {
       const id = req.params.id;
@@ -149,7 +149,7 @@ router.get("/get-all-events", async (req, res, next) => {
 router.get(
   `/admin-all-events`,
   isAuthenticated,
-  isAdmin(`Admin`),
+  isAdminEvent(`Admin`),
   catchAsyncErrors(async (req, res, next) => {
     try {
       const events = await Event.find().sort({
@@ -185,7 +185,7 @@ router.get(
 router.delete(
   `/delete-event/:id`,
   isAuthenticated,
-  isAdmin("Admin"),
+  isAdminEvent("Admin"),
   catchAsyncErrors(async (req, res, next) => {
     try {
       const id = req.params.id;
