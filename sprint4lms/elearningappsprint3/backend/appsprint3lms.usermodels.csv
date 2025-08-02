@@ -1,0 +1,3 @@
+_id,name,email,password,avatar,role,__v
+6883687f03e11dde3260f0bb,ayoub smayen,ayoubjobs.2019@gmail.com,$2b$10$YY9yag5ddwa5F7jQ6eUssOi8HYPRDkBVZFqY/ZtXA3eGJ6/HyknuW,http://res.cloudinary.com/dyp1dxd7a/image/upload/v1753442560/6883687f03e11dde3260f0bb_profile.png,Student,0
+6883699003e11dde3260f0d7,test,testt@gmail.com,$2b$10$r7FmY0Y/RfXmEgcq33Afye8UdiO7zJBKPDP2r4LsR9dp05HtGpxgq,http://res.cloudinary.com/dyp1dxd7a/image/upload/v1753446438/6883699003e11dde3260f0d7_profile.png,Admin,0
